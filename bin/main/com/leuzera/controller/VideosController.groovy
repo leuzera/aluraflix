@@ -11,5 +11,4 @@ class VideosController {
     String index() {
         'Example Response'
     }
-
 }

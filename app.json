@@ -1,0 +1,8 @@
+{
+    "name": "Aluraflix",
+    "description": "Desafio backend da Alura.",
+    "image": "heroku/gradle",
+    "addons": [
+        "heroku-postgresql"
+    ]
+}
