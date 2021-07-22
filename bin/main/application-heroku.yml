@@ -1,0 +1,5 @@
+datasources:
+  default:
+    url: ${DATABASE_URL}
+dataSource:
+  url: ${DATABASE_URL}
