@@ -1,0 +1,6 @@
+applicationType: default
+defaultPackage: com.leuzera
+testFramework: junit
+sourceLanguage: groovy
+buildTool: gradle
+features: [annotation-api, app-name, gradle, groovy, groovy-application, hibernate-gorm, hibernate-jpa, hibernate-validator, http-client, jdbc-hikari, junit, liquibase, logback, management, netty-server, postgres, readme, shade, testcontainers, yaml]

@@ -1,0 +1,54 @@
+plugins {
+    id("groovy") 
+    id("com.github.johnrengelman.shadow") version "7.0.0"
+    id("io.micronaut.application") version "1.5.3"
+}
+
+version = "0.1"
+group = "com.leuzera"
+
+repositories {
+    mavenCentral()
+}
+
+micronaut {
+    runtime("netty")
+    testRuntime("junit5")
+    processing {
+        incremental(true)
+        annotations("com.leuzera.*")
+    }
+}
+
+dependencies {
+    implementation("io.micronaut.openapi:micronaut-openapi")
+    implementation("io.micronaut:micronaut-http-client")
+    implementation("io.micronaut:micronaut-management")
+    implementation("io.micronaut.beanvalidation:micronaut-hibernate-validator")
+    implementation("io.micronaut.groovy:micronaut-hibernate-gorm")
+    implementation("io.micronaut.groovy:micronaut-runtime-groovy")
+    implementation("io.micronaut.liquibase:micronaut-liquibase")
+    implementation("io.micronaut.sql:micronaut-hibernate-jpa")
+    implementation("io.micronaut.sql:micronaut-jdbc-hikari")
+    implementation("javax.annotation:javax.annotation-api")
+    runtimeOnly("ch.qos.logback:logback-classic")
+    runtimeOnly("org.apache.tomcat:tomcat-jdbc")
+    runtimeOnly("org.postgresql:postgresql")
+    testImplementation("org.testcontainers:junit-jupiter")
+    testImplementation("org.testcontainers:postgresql")
+    testImplementation("org.testcontainers:testcontainers")
+    implementation("io.micronaut:micronaut-validation")
+
+}
+
+
+application {
+    mainClass.set("com.leuzera.Application")
+}
+java {
+    sourceCompatibility = JavaVersion.toVersion("11")
+    targetCompatibility = JavaVersion.toVersion("11")
+}
+
+
+
